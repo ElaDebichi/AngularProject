@@ -10,7 +10,7 @@ import {RayonComponent} from "./produit/rayon/rayon.component";
 import {AppComponent} from "./app.component";
 import {MenuComponent} from "./menu/menu.component";
 import {LoginComponent} from "./client/login/login.component";
-import {DetailFactureComponent} from "./facture/detail-facture/detail-facture.component";
+import {DetailFactureComponent} from "./facture/detail-facture/detail-facture.component"; 
 
 
 
@@ -24,7 +24,7 @@ const ROUTES: Routes = [
   {path: 'fournisseur',component:FournisseurComponent},
   {path: 'rayon',component:RayonComponent},
   {path:'stock',component:StockComponent},
-  {path:'login',component:LoginComponent},
+  {path:'login',component:LoginComponent}, 
   {path:'',component:AppComponent},
 
 ];
@@ -32,10 +32,10 @@ const ROUTES: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES), 
   ],
-  exports:[
-    RouterModule
+exports:[
+  RouterModule
   ]
 })
 export class AppRoutingModule { }

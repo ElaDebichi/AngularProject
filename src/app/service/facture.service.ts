@@ -11,8 +11,8 @@ export class FactureService {
   url: string | undefined;
   urlD: string | undefined;
   constructor(private http: HttpClient) {
-    this.url="http://localhost:8090/facture/";
-    this.urlD="http://localhost:8090/detailFacture/";
+    this.url="http://localhost:8091/facture/";
+    this.urlD="http://localhost:8091/detailFacture/";
   }
 
   getFactures(){

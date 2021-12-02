@@ -18,8 +18,9 @@
 </table>
 
 <app-add-detail-facture *ngIf="addDet==true"></app-add-detail-facture>
+<p>hahahahaha </p>
 <button class="btn btn-info" (click)="addDetail()">Ajouter un produit</button>
-<span><h4>Client:</h4><p>{{facture.client.nom}} {{facture.client.prenom}}</p></span>
+<!-- <span><h4>Client:</h4><p>{{facture.client.nom}} {{facture.client.prenom}}</p></span> -->
 <span><h4>Montant Remise:</h4><p>{{facture.montantRemise}}</p></span>
 <span><h4>Montant De Facture:</h4><p>{{facture.montantFacture}}</p></span>
 <span><h4>Etat:</h4><p>{{facture.active}}</p></span>

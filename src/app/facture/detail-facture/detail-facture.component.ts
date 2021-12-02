@@ -24,11 +24,11 @@ export class DetailFactureComponent implements OnInit {
     this.addDet =false;
   }
 
-  delete(id: number){
-    this.factureService.deleteDetailFacture(id).subscribe(
+ delete(id: number){
+   this.factureService.deleteDetailFacture(id).subscribe(
       () => this.facture.detailFactures = this.facture.detailFactures.filter(detailFactureFilter => detailFactureFilter.idDetailFacture != id)
-    );
-  }
+   );
+  } 
   addDetail(){
     this.addDet = !this.addDet;
   }

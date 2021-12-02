@@ -15,7 +15,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {DetailFactureComponent} from "./facture/detail-facture/detail-facture.component";
-import {AddDetailFactureComponent} from "./facture/add-detail-facture/add-detail-facture.component";
+import {AddDetailFactureComponent} from "./facture/add-detail-facture/add-detail-facture.component"; 
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import {AddDetailFactureComponent} from "./facture/add-detail-facture/add-detail
     MenuComponent,
     LoginComponent,
     DetailFactureComponent,
-    AddDetailFactureComponent,
+    AddDetailFactureComponent, 
   ],
   imports: [
     BrowserModule,

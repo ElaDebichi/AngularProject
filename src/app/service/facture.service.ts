@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Facture} from "../models/facture";
 import {detailFacture} from "../models/detailFacture";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +28,8 @@ export class FactureService {
   deleteDetailFacture(id: number){
     return this.http.delete(this.urlD + 'delete/' + id);
   }
-  ajouterDetailFacture(detailFact: detailFacture){
-    return this.http.post(this.urlD + '/add'  , detailFact).subscribe();
+  ajouterDetailFacture(detailFact: detailFacture):Observable<any>{
+    return this.http.post(this.urlD + 'add'  , detailFact);
   }
 
 }

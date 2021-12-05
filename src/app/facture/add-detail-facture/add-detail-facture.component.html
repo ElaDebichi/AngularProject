@@ -1,14 +1,18 @@
-<form class="form">
+<form class="form" #addForm="ngForm" (ngSubmit)="ajouter(addForm)">
   <div class="form-group">
     <label>produit</label>
-    <select name="produit" class="form-control"  [(ngModel)]="idProduit" >
-      <option *ngFor="let prod of listeProduit" value="{{prod.idProduit}}">{{prod.libelle}}</option>
+    <select name="idProduit" class="form-control"  [(ngModel)]="idProduit" >
+      <option value="{{prod.idProduit}}" *ngFor="let prod of listeProduit">{{prod.libelle}}</option>
     </select>
   </div>
   <div class="form-group">
     <label>Quantite</label>
     <input type="number" name="qte" class="form-control" [(ngModel)]="detailFacture.qte">
   </div>
+
+
+
+  
   <div class="form-group">
     <label>Pourcentage Remise</label>
     <input type="number" name="pourcentageRemise" class="form-control" [(ngModel)]="detailFacture.pourcentageRemise">
@@ -17,30 +21,5 @@
     <label>Montant Remise</label>
     <input type="number" name="montantRemise" class="form-control" [(ngModel)]="detailFacture.montantRemise">
   </div>
-  <button class="btn btn-success" (click)="ajouter()">Ajouter</button>
+  <button class="btn btn-success" type="submit">Ajouter</button>
 </form>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>

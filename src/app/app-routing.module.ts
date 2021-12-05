@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import{RouterModule,Routes} from "@angular/router";
-import {ProduitComponent} from "./produit/produit/produit.component";
 import {FactureComponent} from "./facture/facture/facture.component";
 import {FournisseurComponent} from "./fournisseur/fournisseur/fournisseur.component";
 import {ClientComponent} from "./client/client/client.component";
@@ -11,6 +10,8 @@ import {AppComponent} from "./app.component";
 import {MenuComponent} from "./menu/menu.component";
 import {LoginComponent} from "./client/login/login.component";
 import {MainProductComponent} from "./main-product/main-product.component";
+import {FormProductComponent} from "./form-product/form-product.component";
+import {ProduitComponent} from "./produit/produit/produit.component";
 
 
 
@@ -18,8 +19,12 @@ import {MainProductComponent} from "./main-product/main-product.component";
 
 const ROUTES: Routes = [
   {path:'login',component:LoginComponent},
+  {path:'products',component:MainProductComponent,
+    children: [
+      {path:'formprod',component:FormProductComponent},
+      {path:'prod',component:ProduitComponent}]
+  },
 
-  {path: 'produit',component:MainProductComponent},
   {path:'menu',component:MenuComponent},
   {path: 'client',component:ClientComponent},
   {path: 'facture', component: FactureComponent},

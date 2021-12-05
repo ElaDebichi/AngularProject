@@ -1,4 +1,10 @@
-<app-produit>
+<button class="btn btn-warning" (click)="showForm()">Add new Product</button>
+<app-form-product
+                  *ngIf="showFormTemplate" >
 
+</app-form-product>
+<div *ngIf="!showFormTemplate">
+  <app-produit>
 
-</app-produit>
+  </app-produit>
+</div>

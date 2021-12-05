@@ -1,21 +1,25 @@
-
-<form [formGroup]="form" >
-  <div class="form-group">
+<div class="centerr">
+  <title> Add Product</title>
+<form [formGroup]="form"  >
+  <div class="centerform"> <div class="form-group" >
     <label>Code</label>
-    <input type="text" class="form-control" formControlName="title">
-  </div>
+    <input type="text"  class="form-control-sm" required [(ngModel)]="product.code"  formControlName="code">
+  </div></div>
+<br>
+  <div class="centerform"> <div class="form-group">
+    <label>Label</label>
+    <input type="text" class="form-control-sm" required   [(ngModel)]="product.label" formControlName="label">
+  </div></div>
 
-  <div class="form-group">
-    <label>Libelle</label>
-    <input type="text" class="form-control" formControlName="description">
-  </div>
-
-  <div class="form-group">
-    <label>Prix Unitaire</label>
-    <input type="number" class="form-control" formControlName="price">
-  </div>
-<div style="align-content: space-between">
-  <input class="btn btn-primary" style="align-content: center" type="submit" value="Add product">
-  <input class="btn btn-secondary" type="reset" value="Reset">
+  <div class="centerform"><div class="form-group">
+    <label>Unit price</label>
+    <input type="number" class="form-control-sm"  required  [(ngModel)]="product.price" formControlName="price">
+  </div></div>
+  <div class="centerbutton">
+<div class="centerr" >
+  <input class="btn btn-primary"   (click)="save()" type="submit" value="Add Product">
+  <input class="btn btn-pinterest" type="reset" value="Reset">
 </div>
+  </div>
 </form>
+</div>

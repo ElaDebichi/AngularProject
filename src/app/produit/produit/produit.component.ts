@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Product} from "../../models/product";
+import {ProductService} from "../../product.service";
+import {Observable} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-produit',
@@ -6,10 +10,49 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./produit.component.css']
 })
 export class ProduitComponent implements OnInit {
+  product: Product;
 
-  constructor() { }
+
+  products: Product[];
+
+
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+
   }
+
+
+
+
+  public retrieveProduct(id: number){
+    let resp= this.productService.retrieveProduct(id);
+    // @ts-ignore
+    resp.subscribe((data)=>this.products=data);
+  }
+
+  public retrieveProducts(){
+    let resp= this.productService.retrieveAllProduits();
+    // @ts-ignore
+    resp.subscribe((data)=>this.products=data);
+  }
+
+
+  updateProduct(id : number){
+    let resp= this.productService.update(id);
+    // @ts-ignore
+    resp.subscribe((data)=>this.products=data);
+}
+
+
+deleteProduct(id: number){
+  let resp= this.productService.deleteProduct(id);
+  // @ts-ignore
+  resp.subscribe((data)=>this.products=data);
+}
+
+
+
 
 }

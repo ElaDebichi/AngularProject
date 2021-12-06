@@ -19,11 +19,7 @@ export class MainProductComponent implements OnInit {
   ngOnInit(): void {
     this.showFormTemplate = false;
   }
-  public retrieveProducts(){
-    let resp= this.productService.retrieveAllProduits();
-    // @ts-ignore
-    resp.subscribe((data)=>this.listProduct=data);
-  }
+
   showForm(){
     this.showFormTemplate =true
   }

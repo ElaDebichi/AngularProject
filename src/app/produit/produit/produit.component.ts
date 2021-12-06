@@ -13,7 +13,7 @@ export class ProduitComponent implements OnInit {
   product: Product;
 
 
-  products: Product[];
+  products: Product[]=[];
 
 
 
@@ -35,7 +35,7 @@ export class ProduitComponent implements OnInit {
   public retrieveProducts(){
     let resp= this.productService.retrieveAllProduits();
     // @ts-ignore
-    resp.subscribe((data)=>this.products=data);
+    resp.subscribe((data)=>(data.constructor(Output(this.product.code)),Output(this.product.label),Output(this.product.price)));
   }
 
 

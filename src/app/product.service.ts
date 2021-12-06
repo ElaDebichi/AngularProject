@@ -12,11 +12,11 @@ export class ProductService {
   constructor(private http:HttpClient) { }
   retrieveAllProduits(){
     // @ts-ignore
-    return this.http.get("http://localhost:8089/produit/");
+    return this.http.get("http://localhost:8089/produit/list");
   }
   // @ts-ignore
-  addProduct(Product){
-    return this.http.post("http://localhost:8089/produit/add",Product,{responseType:'text' as 'json'});
+  addProduct(product: Product){
+    return this.http.post("http://localhost:8089/produit/add",product,{responseType:'text' as 'json'});
   }
 
   // @ts-ignore

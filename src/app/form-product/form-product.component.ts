@@ -41,9 +41,10 @@ export class FormProductComponent implements OnInit {
   save() {
     let response = this.productService.addProduct(this.product);
     response.subscribe()
+    console.log(Product);
 
 
-      }
+  }
 
   onSubmit(form : FormGroup):void{
     this.product.code = form.value.code
@@ -51,6 +52,7 @@ export class FormProductComponent implements OnInit {
     this.product.price = form.value.price
     this.submitted = true;
     this.save();
+
   }
 
 

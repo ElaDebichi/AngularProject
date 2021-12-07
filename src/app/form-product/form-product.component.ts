@@ -23,16 +23,13 @@ export class FormProductComponent implements OnInit {
 
 
   }
-  newProdcut(): void {
-    this.submitted = false;
-    this.product =new Product("","",0);
-  }
+
   initializeForm(): void {
     this.form = this.fb.group({
 
       code: 'write code here',
-      label:' write label here ',
-      price:'write price here',
+      libelle:' write libelle here ',
+      prixUnitaire:'write prix here',
     })
 
 
@@ -42,16 +39,19 @@ export class FormProductComponent implements OnInit {
     let response = this.productService.addProduct(this.product);
     response.subscribe()
     console.log(Product);
+    this.router.navigate(['products']);
 
 
   }
 
   onSubmit(form : FormGroup):void{
     this.product.code = form.value.code
-    this.product.label = form.value.label
-    this.product.price = form.value.price
+    this.product.libelle = form.value.libelle
+    this.product.prixUnitaire = form.value.prixUnitaire
     this.submitted = true;
     this.save();
+
+
 
   }
 

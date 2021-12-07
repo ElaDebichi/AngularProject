@@ -1,6 +1,7 @@
 <div class="centerr">
   <title> Add Product</title>
-<form [formGroup]="form"  >
+
+  <form [formGroup]="form"  >
   <div class="centerform"> <div class="form-group" >
     <label>Code</label>
     <input type="text"  class="form-control-sm" required [(ngModel)]="product.code"  formControlName="code">
@@ -8,16 +9,16 @@
 <br>
   <div class="centerform"> <div class="form-group">
     <label>Label</label>
-    <input type="text" class="form-control-sm" required   [(ngModel)]="product.label" formControlName="label">
+    <input type="text" class="form-control-sm" required   [(ngModel)]="product.libelle" formControlName="label">
   </div></div>
 
   <div class="centerform"><div class="form-group">
     <label>Unit price</label>
-    <input type="number" class="form-control-sm"  required  [(ngModel)]="product.price" formControlName="price">
+    <input type="number" class="form-control-sm"  required  [(ngModel)]="product.prixUnitaire" formControlName="price">
   </div></div>
   <div class="centerbutton">
 <div class="centerr" >
-  <input class="btn btn-primary"   (click)="save()" type="submit" value="Add Product">
+  <input class="btn btn-primary"  (click)="save()" type="submit" value="Add Product">
   <input class="btn btn-pinterest" type="reset" value="Reset">
 </div>
   </div>

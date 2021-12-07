@@ -3,10 +3,10 @@ export class Product {
 
   }
 
-  id: number;
+  idProduit: number;
   code: string;
-  label:string;
-  price:number;
+  libelle:string;
+  prixUnitaire:number;
 
 
 }

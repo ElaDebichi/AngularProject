@@ -1,10 +1,12 @@
-<button class="btn btn-warning" (click)="showForm()">Add new Product</button>
-<app-form-product
-                  *ngIf="showFormTemplate" >
+<button class="btn btn-warning" *ngIf="!isButtonVisible" (click)="showForm()" >Add new Product</button>
+<button class="btn btn-warning" *ngIf="isButtonVisible" (click)="goback()" >Go Back</button>
+
+<app-form-product *ngIf="showFormTemplate && !showList">
 
 </app-form-product>
+
 <div *ngIf="!showFormTemplate">
-  <app-produit>
+  <app-produit *ngIf="showList">
 
   </app-produit>
 </div>

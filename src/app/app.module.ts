@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormProductComponent } from './form-product/form-product.component';
 import { MainProductComponent } from './main-product/main-product.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ListProductComponent } from './list-product/list-product.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {HttpClientModule} from "@angular/common/http";
     MenuComponent,
     HeaderComponent,
     FormProductComponent,
-    MainProductComponent
+    MainProductComponent,
+    ListProductComponent
   ],
   imports: [
     BrowserModule,

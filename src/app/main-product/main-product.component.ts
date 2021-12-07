@@ -9,18 +9,33 @@ import {Router} from "@angular/router";
   styleUrls: ['./main-product.component.css']
 })
 export class MainProductComponent implements OnInit {
-  listProduct: Product[];
-  product: Product = new Product("","",0);
-  showFormTemplate: boolean;
 
-  constructor(private productService: ProductService ) {
+  // @ts-ignore
+  product: Product[] = new Product("","",0);
+  showFormTemplate: boolean;
+  products: Product;
+  isButtonVisible: boolean;
+  showList:boolean;
+
+  addProduct(product: Product[]) {
+    // @ts-ignore
+    this.items.push(product);
+  }
+
+  constructor(private productService: ProductService,private router:Router) {
   }
 
   ngOnInit(): void {
     this.showFormTemplate = false;
-  }
+    this.isButtonVisible=false;
+    this.showList=false;
 
+  }
+goback(){
+this.showList=true;
+}
   showForm(){
     this.showFormTemplate =true
+    this.isButtonVisible=true;
   }
 }

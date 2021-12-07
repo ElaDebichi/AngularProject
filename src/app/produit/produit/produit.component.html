@@ -2,25 +2,27 @@
   <table class="table data-thumb-view">
     <thead>
     <tr>
-      <th></th>
+      <th>id</th>
+
       <th>Image</th>
-      <th>NAME</th>
-      <th>CATEGORY</th>
-      <th>PRICE</th>
+      <th>Code</th>
+      <th>Libelle</th>
+      <th>Prix Unitaire</th>
       <th>ACTION</th>
     </tr>
     </thead>
     <tbody>
 
     <tr *ngFor="let product of products">
-      <td>{{product.id}}</td>
+      <td>{{product.idProduit}}</td>
       <td class="product-img"><img src="assets/images/elements/beats-headphones.png" alt="Img placeholder">
       </td>
       <td>{{product.code}}</td>
-      <td>{{product.label}}</td>
+      <td>{{product.libelle}}</td>
+      <td>{{product.prixUnitaire}}</td>
       <td class="">
-        <button (click)="deleteProduct(product.id)" class="action-edit"><i class="feather icon-trash"></i></button>
-        <button (click)="updateProduct(product.id)" class="action-edit"><i class="feather icon-edit"></i></button>
+        <button (click)="deleteProduct(product.idProduit)" class="action-edit"><i class="feather icon-trash"></i></button>
+        <button (click)="updateProduct(product.idProduit)"  class="action-edit"><i class="feather icon-edit"></i></button>
 
       </td>
     </tr>

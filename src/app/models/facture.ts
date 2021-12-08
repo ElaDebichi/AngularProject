@@ -1,12 +1,11 @@
-import {Client} from "./client";
-import {detailFacture} from "./detailFacture";
+import { Client } from "./client";
 
 export class Facture {
-  idFacture!: number;
-  montantRemise!: number;
-  montantFacture!: number;
-  dateFacture!: Date;
-  active!: boolean;
-  client!: Client;
-  detailFactures!: detailFacture[];
+    idFacture : number ;
+    montantRemise : number ;
+    montantFacture : number ;
+    montantTotal: number;
+    dateFacture : Date ; 
+    active : boolean;
+    client : Client;
 }

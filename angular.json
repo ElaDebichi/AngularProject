@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "aa1ec570-8fb4-4765-993a-1b7f431458d3"
+    "analytics": "887666b7-4429-4e06-9f45-58338caa7797"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-project": {
+    "GestionMagasin": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-project",
+            "outputPath": "dist/GestionMagasin",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,10 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
             ],
-            "scripts": [  "node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -72,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-project:build:production"
+              "browserTarget": "GestionMagasin:build:production"
             },
             "development": {
-              "browserTarget": "angular-project:build:development"
+              "browserTarget": "GestionMagasin:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-project:build"
+            "browserTarget": "GestionMagasin:build"
           }
         },
         "test": {
@@ -98,13 +97,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css","node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
             ],
-            "scripts": [    "node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "scripts": []
           }
         }
       }
     }
   },
-  "defaultProject": "angular-project"
+  "defaultProject": "GestionMagasin"
 }

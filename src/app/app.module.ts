@@ -1,43 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
 import { AppRoutingModule } from './app-routing.module';
-import {FactureComponent} from "./facture/facture/facture.component";
-import {FournisseurComponent} from "./fournisseur/fournisseur/fournisseur.component";
-import {ProduitComponent} from "./produit/produit/produit.component";
-import {RayonComponent} from "./produit/rayon/rayon.component";
-import {StockComponent} from "./produit/stock/stock.component";
-import {ClientComponent} from "./client/client/client.component";
-import {LoginComponent} from "./client/login/login.component";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { HttpClientModule} from "@angular/common/http";
-import {CommonModule} from "@angular/common";
-import {DetailFactureComponent} from "./facture/detail-facture/detail-facture.component";
-import {AddDetailFactureComponent} from "./facture/add-detail-facture/add-detail-facture.component"; 
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { TestComponent } from './test/test.component';
+import { ListClientComponent } from './list-client/list-client.component';
+import { AddFactureComponent } from './GestionFactures/add-facture/add-facture.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListFacturesComponent } from './GestionFactures/list-factures/list-factures.component';
+import { ListFacturesPayerComponent } from './GestionFactures/list-factures-payer/list-factures-payer.component';
+import { UpdateFactureComponent } from './GestionFactures/update-facture/update-facture.component';
+import { DetailFactureComponent } from './GestionFactures/detail-facture/detail-facture.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientComponent,
-    FactureComponent,
-    FournisseurComponent,
-    ProduitComponent,
-    RayonComponent,
-    StockComponent,
-    MenuComponent,
-    LoginComponent,
-    DetailFactureComponent,
-    AddDetailFactureComponent, 
-  ],
+    HeaderComponent,
+    TestComponent,
+    ListClientComponent,
+    AddFactureComponent,
+    ListFacturesComponent,
+    ListFacturesPayerComponent,
+    UpdateFactureComponent,
+    DetailFactureComponent, NavbarComponent
+    ],
   imports: [
     BrowserModule,
-    CommonModule,
-    FormsModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

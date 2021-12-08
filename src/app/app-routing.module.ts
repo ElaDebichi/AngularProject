@@ -1,41 +1,24 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import{RouterModule,Routes} from "@angular/router";
-import {ProduitComponent} from "./produit/produit/produit.component";
-import {FactureComponent} from "./facture/facture/facture.component";
-import {FournisseurComponent} from "./fournisseur/fournisseur/fournisseur.component";
-import {ClientComponent} from "./client/client/client.component";
-import {StockComponent} from "./produit/stock/stock.component";
-import {RayonComponent} from "./produit/rayon/rayon.component";
-import {AppComponent} from "./app.component";
-import {MenuComponent} from "./menu/menu.component";
-import {LoginComponent} from "./client/login/login.component";
-import {DetailFactureComponent} from "./facture/detail-facture/detail-facture.component"; 
+import { RouterModule, Routes } from '@angular/router';
+import { AddFactureComponent } from './GestionFactures/add-facture/add-facture.component';
+import { ListFacturesPayerComponent } from './GestionFactures/list-factures-payer/list-factures-payer.component';
+import { ListFacturesComponent } from './GestionFactures/list-factures/list-factures.component';
+import { UpdateFactureComponent } from './GestionFactures/update-facture/update-facture.component';
+import { ListClientComponent } from './list-client/list-client.component';
+import { TestComponent } from './test/test.component';
 
-
-
-
-
-const ROUTES: Routes = [
-  {path: 'produit',component:ProduitComponent},
-  {path: 'client',component:ClientComponent},
-  {path: 'facture', component: FactureComponent},
-  {path: 'facture-detail/:id', component: DetailFactureComponent},
-  {path: 'fournisseur',component:FournisseurComponent},
-  {path: 'rayon',component:RayonComponent},
-  {path:'stock',component:StockComponent},
-  {path:'login',component:LoginComponent}, 
-  {path:'',component:AppComponent},
-
+const routes: Routes = [
+  {path:"home", component:TestComponent},
+  {path:"listclient", component:ListClientComponent},
+  {path:"facturenonpayer", component:ListFacturesComponent},
+  {path:"facturepayer", component:ListFacturesPayerComponent},
+  {path:"facture/add", component:AddFactureComponent},
+  {path:"facture/update/:id", component:UpdateFactureComponent},
+  {path:"", redirectTo:"home", pathMatch:"full"},
 ];
+
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(ROUTES), 
-  ],
-exports:[
-  RouterModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

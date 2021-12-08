@@ -58,19 +58,19 @@
                                     <th></th>
                                     <th>Image</th>
                                     <th>NAME</th>
-                                    <th>CATEGORY</th>
-                                    <th>POPULARITY</th>
-                                    <th>ORDER STATUS</th>
+                                    <th>CODE</th>
+                                    <th>QUANTITE</th>
+                                    <th>STOCK STATUS</th>
                                     <th>PRICE</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let stock of stocks">
                                     <td></td>
                                     <td class="product-img"><img src="../../../assets/images/elements/apple-watch.png" alt="Img placeholder">
                                     </td>
-                                    <td class="product-name">Apple Watch series 4 GPS</td>
+                                    <td class="product-name">{{stock.libelleStock}}</td>
                                     <td class="product-category">Computers</td>
                                     <td>
                                         <div class="progress progress-bar-success">

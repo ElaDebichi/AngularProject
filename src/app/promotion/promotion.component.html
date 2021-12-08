@@ -32,122 +32,32 @@
         <div class="content-body">
             <form action="#" class="icons-tab-steps checkout-tab-steps wizard-circle">
                 <!-- Checkout Place order starts -->
-                <h6><i class="step-icon step feather icon-shopping-cart"></i>Cart</h6>
+                <h6><i class="step-icon step feather icon-shopping-cart"></i>Promotion</h6>
                 <fieldset class="checkout-step-1 px-0">
                     <section id="place-order" class="list-view product-checkout">
-                        <div class="checkout-items">
-                            <div class="card ecommerce-card">
-                                <div class="card-content">
-                                    <div class="item-img text-center">
-                                        <a href="app-ecommerce-details.html">
-                                            <img src="../../../app-assets/images/pages/eCommerce/9.png" alt="img-placeholder">
-                                        </a>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="item-name">
-                                            <a href="app-ecommerce-details.html">Amazon - Fire TV Stick with Alexa Voice Remote - Black</a>
-                                            <span></span>
-                                            <p class="item-company">By <span class="company-name">Amazon</span></p>
-                                            <p class="stock-status-in">In Stock</p>
-                                        </div>
-                                        <div class="item-quantity">
-                                            <p class="quantity-title">Quantity</p>
-                                            <div class="input-group quantity-counter-wrapper">
-                                                <input type="text" class="quantity-counter" value="1">
-                                            </div>
-                                        </div>
-                                        <p class="delivery-date">Delivery by, Wed Apr 25</p>
-                                        <p class="offers">17% off 4 offers Available</p>
-                                    </div>
-                                    <div class="item-options text-center">
-                                        <div class="item-wrapper">
-                                            <div class="item-rating">
-                                                <div class="badge badge-primary badge-md">
-                                                    4 <i class="feather icon-star ml-25"></i>
-                                                </div>
-                                            </div>
-                                            <div class="item-cost">
-                                                <h6 class="item-price">
-                                                    $39.99
-                                                </h6>
-                                                <p class="shipping">
-                                                    <i class="feather icon-shopping-cart"></i> Free Shipping
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="wishlist remove-wishlist">
-                                            <i class="feather icon-x align-middle"></i> Remove
-                                        </div>
-                                        <div class="cart remove-wishlist">
-                                            <i class="fa fa-heart-o mr-25"></i> Wishlist
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="checkout-options">
+                        <div *ngFor="let promotion of promotions" class="col-xl-4 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <p class="options-title">Options</p>
-                                        <div class="coupons">
-                                            <div class="coupons-title">
-                                                <p>Coupons</p>
+                                        <img class="card-img img-fluid mb-1" src="../../assets/images/pages/content-img-2.jpg" alt="Card image cap">
+                                        <h5 class="mt-1">Vuexy Admin</h5>
+                                        <div class="d-flex justify-content-between">
+                                            <small class="float-left font-weight-bold mb-25" id="example-caption-1">$ 5975</small>
+                                            <small class="float-right  mb-25" id="example-caption-2">$ 8000</small>
+                                        </div>
+                                        <div class="progress progress-bar-primary box-shadow-6">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="75" aria-valuemax="100" style="width:75%" aria-describedby="example-caption-2"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between mt-2">
+                                            <div class="float-left">
+                                                <p class="font-medium-2 mb-0">$ 4785.78</p>
+                                                <p class="">- 75 %</p>
                                             </div>
-                                            <div class="apply-coupon">
-                                                <p>Apply</p>
+                                            <div class="float-right">
+                                                <p class="font-medium-2 mb-0">12 June 2019</p>
+                                                <p class="">Delivery Date</p>
                                             </div>
                                         </div>
-                                        <hr>
-                                        <div class="price-details">
-                                            <p>Price Details</p>
-                                        </div>
-                                        <div class="detail">
-                                            <div class="detail-title">
-                                                Total MRP
-                                            </div>
-                                            <div class="detail-amt">
-                                                $598
-                                            </div>
-                                        </div>
-                                        <div class="detail">
-                                            <div class="detail-title">
-                                                Bag Discount
-                                            </div>
-                                            <div class="detail-amt discount-amt">
-                                                -25$
-                                            </div>
-                                        </div>
-                                        <div class="detail">
-                                            <div class="detail-title">
-                                                Estimated Tax
-                                            </div>
-                                            <div class="detail-amt">
-                                                $1.3
-                                            </div>
-                                        </div>
-                                        <div class="detail">
-                                            <div class="detail-title">
-                                                EMI Eligibility
-                                            </div>
-                                            <div class="detail-amt emi-details">
-                                                Details
-                                            </div>
-                                        </div>
-                                        <div class="detail">
-                                            <div class="detail-title">
-                                                Delivery Charges
-                                            </div>
-                                            <div class="detail-amt discount-amt">
-                                                Free
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="detail">
-                                            <div class="detail-title detail-total">Total</div>
-                                            <div class="detail-amt total-amt">$574</div>
-                                        </div>
-                                        <div class="btn btn-primary btn-block place-order">PLACE ORDER</div>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +66,6 @@
                 </fieldset>
                 <!-- Checkout Place order Ends -->
             </form>
-
         </div>
     </div>
 </div>

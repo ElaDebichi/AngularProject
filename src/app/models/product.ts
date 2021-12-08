@@ -1,5 +1,5 @@
 export class Product {
-  constructor(code: string, label: string, price: number) {
+  constructor(code: string, libelle: string, prixUnitaire: number) {
 
   }
 

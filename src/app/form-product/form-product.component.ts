@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {Product} from "../models/product";
 import {ProductService} from "../product.service";
 import {Router} from "@angular/router";
+import {window} from "rxjs/operators";
+import {Product} from "../models/product";
 
 
 @Component({
@@ -12,7 +13,9 @@ import {Router} from "@angular/router";
 })
 export class FormProductComponent implements OnInit {
   form: FormGroup;
-  product: Product  =new Product("","",0);
+
+  // @ts-ignore
+  product = new Product("","");
   submitted = false;
   constructor(private fb: FormBuilder,private productService:ProductService, private router:Router) {
   }
@@ -39,21 +42,20 @@ export class FormProductComponent implements OnInit {
     let response = this.productService.addProduct(this.product);
     response.subscribe()
     console.log(Product);
-    this.router.navigate(['products']);
-
+location.reload();
 
   }
 
-  onSubmit(form : FormGroup):void{
+  onSubmit(form : FormGroup):void {
     this.product.code = form.value.code
     this.product.libelle = form.value.libelle
     this.product.prixUnitaire = form.value.prixUnitaire
     this.submitted = true;
     this.save();
-
+  }
 
 
   }
 
 
-}
+

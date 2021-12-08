@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Product} from "../../models/product";
 import {ProductService} from "../../product.service";
 import {Router} from "@angular/router";
+import {async} from "rxjs";
 
 
 @Component({
@@ -41,20 +42,20 @@ export class ProduitComponent implements OnInit {
 
 
 
-  updateProduct(id : number){
-    let resp= this.productService.update(id);
+  updateProduct(idProduit : number){
+    let resp= this.productService.update(idProduit);
     // @ts-ignore
     resp.subscribe((data)=>this.products=data);
-    // @ts-ignore
-    this.router.navigate('formprod')
+    location.reload();
 }
 
 
-deleteProduct(id: number){
-  let resp= this.productService.deleteProduct(id);
+deleteProduct(idProduit: number){
+  let resp= this.productService.deleteProduct(idProduit);
   // @ts-ignore
   resp.subscribe((data)=>this.products=data);
-}
+location.reload();
+  }
 
 
 

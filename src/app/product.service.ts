@@ -21,14 +21,14 @@ export class ProductService {
 
   // @ts-ignore
   deleteProduct(id){
-    return this.http.delete("http://localhost:8089/produit/"+id);
+    return this.http.delete("http://localhost:8089/produit/delete/"+id);
   }
   // @ts-ignore
 
   update(id){
 
     // @ts-ignore
-    return this.http.put("http://localhost:8089/produit/"+id);
+    return this.http.put("http://localhost:8089/produit/update/"+id);
   }
   // @ts-ignore
 

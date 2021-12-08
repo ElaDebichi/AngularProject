@@ -1,0 +1,26 @@
+<div class="centerr">
+  <title> Add Product</title>
+
+  <form [formGroup]="form" (ngSubmit)="form" >
+    <div class="centerform"> <div class="form-group" >
+      <label>Code</label>
+      <input type="text"  class="form-control-sm" required [(ngModel)]="product.code"  formControlName="code">
+    </div></div>
+    <br>
+    <div class="centerform"> <div class="form-group" >
+      <label>Label</label>
+      <input type="text"  class="form-control-sm" required [(ngModel)]="product.libelle"  formControlName="libelle">
+    </div></div>
+
+    <div class="centerform"><div class="form-group">
+      <label>Unit price</label>
+      <input type="number" class="form-control-sm"  required  [(ngModel)]="product.prixUnitaire" formControlName="prixUnitaire">
+    </div></div>
+    <div class="centerbutton">
+      <div class="centerr" >
+        <input class="btn btn-primary"   type="submit" value="Update Product">
+        <input class="btn btn-pinterest"  type="reset" value="Reset">
+      </div>
+    </div>
+  </form>
+</div>

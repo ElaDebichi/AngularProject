@@ -11,31 +11,36 @@ import {Router} from "@angular/router";
 export class MainProductComponent implements OnInit {
 
   // @ts-ignore
-  product: Product[] = new Product("","",0);
+  product: Product[] = new Product("","",);
   showFormTemplate: boolean;
   products: Product;
   isButtonVisible: boolean;
-  showList:boolean;
+  showListpage:boolean;
 
   addProduct(product: Product[]) {
     // @ts-ignore
     this.items.push(product);
   }
 
-  constructor(private productService: ProductService,private router:Router) {
+  constructor(private router:Router) {
   }
 
   ngOnInit(): void {
     this.showFormTemplate = false;
     this.isButtonVisible=false;
-    this.showList=false;
+    this.showListpage=false;
 
   }
-goback(){
-this.showList=true;
+showList(){
+this.showListpage=true;
+  this.showFormTemplate =false;
+  this.isButtonVisible=false;
+
+
 }
   showForm(){
-    this.showFormTemplate =true
+    this.showFormTemplate =true;
     this.isButtonVisible=true;
+    this.showListpage=false;
   }
 }

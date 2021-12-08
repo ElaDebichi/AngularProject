@@ -12,7 +12,7 @@ import {LoginComponent} from "./client/login/login.component";
 import {MainProductComponent} from "./main-product/main-product.component";
 import {FormProductComponent} from "./form-product/form-product.component";
 import {ProduitComponent} from "./produit/produit/produit.component";
-import {ListProductComponent} from "./list-product/list-product.component";
+import {UpdateProductComponent} from "./update-product/update-product.component";
 
 
 
@@ -20,10 +20,11 @@ import {ListProductComponent} from "./list-product/list-product.component";
 
 const ROUTES: Routes = [
   {path:'login',component:LoginComponent},
-  {path:'listproduct',component:ListProductComponent},
-  {path:'products',component:MainProductComponent},
+  {path:'products',component:MainProductComponent,
+    children: [
       {path:'formprod',component:FormProductComponent},
-      {path:'prod',component:ProduitComponent},
+      {path:'prod',component:ProduitComponent}]
+  },
 
   {path:'menu',component:MenuComponent},
   {path: 'client',component:ClientComponent},
@@ -31,7 +32,7 @@ const ROUTES: Routes = [
   {path: 'fournisseur',component:FournisseurComponent},
   {path: 'rayon',component:RayonComponent},
   {path:'stock',component:StockComponent},
-
+  {path:'updateform',component:UpdateProductComponent},
   {path:'',component:AppComponent},
 
 

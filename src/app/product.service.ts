@@ -25,10 +25,10 @@ export class ProductService {
   }
   // @ts-ignore
 
-  update(id){
+  update(id:number){
 
     // @ts-ignore
-    return this.http.put("http://localhost:8089/produit/update/"+id);
+    return this.http.put("http://localhost:8089/produit/update/{id}");
   }
   // @ts-ignore
 

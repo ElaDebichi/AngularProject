@@ -32,7 +32,7 @@ const ROUTES: Routes = [
   {path: 'fournisseur',component:FournisseurComponent},
   {path: 'rayon',component:RayonComponent},
   {path:'stock',component:StockComponent},
-  {path:'updateform',component:UpdateProductComponent},
+  {path:'updateform/:idProduit',component:UpdateProductComponent},
   {path:'',component:AppComponent},
 
 

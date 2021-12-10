@@ -43,10 +43,7 @@ export class ProduitComponent implements OnInit {
 
 
   updateProduct(idProduit : number){
-    let resp= this.productService.update(idProduit);
-    // @ts-ignore
-    resp.subscribe((data)=>this.products=data);
-    location.reload();
+    this.router.navigate(['updateform',idProduit])
 }
 
 

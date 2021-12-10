@@ -14,12 +14,31 @@ export class UpdateProductComponent implements OnInit {
   form: FormGroup;
 
   // @ts-ignore
-  product = new Product("","");
+  product = new Product("", "");
   submitted = false;
-  constructor(private fb: FormBuilder,private productService:ProductService, private router:Router) {
+
+  constructor(private fb: FormBuilder, private productService: ProductService, private router: Router) {
   }
 
   ngOnInit(): void {
+
+
   }
 
+
+  updateProduct(id: number) {
+    let resp = this.productService.update(id);
+    resp.subscribe( data => {
+      // @ts-ignore
+      this.product=data  })
+    console.log(id);
+    this.router.navigateByUrl('products')
+
+  }
+
+  onSubmit(form : FormGroup): void {
+    this.submitted = true;
+    // @ts-ignore
+    this.updateProduct();
+}
 }

@@ -14,6 +14,7 @@ import { ListFacturesPayerComponent } from './GestionFactures/list-factures-paye
 import { UpdateFactureComponent } from './GestionFactures/update-facture/update-facture.component';
 import { DetailFactureComponent } from './GestionFactures/detail-facture/detail-facture.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import {  RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -26,14 +27,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     ListFacturesComponent,
     ListFacturesPayerComponent,
     UpdateFactureComponent,
-    DetailFactureComponent, NavbarComponent
+    DetailFactureComponent, NavbarComponent,
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule, RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

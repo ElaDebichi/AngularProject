@@ -6,6 +6,8 @@ import { FactureService } from 'src/app/Services/facture.service';
 import { DetailfactureService } from 'src/app/Services/detail-facture.service';
 import { Produit } from 'src/app/Models/produit';;
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'; 
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -171,11 +173,13 @@ export class AddFactureComponent implements OnInit {
         console.log(this.detailFacture);
         this.createDetailFacture();
         this.getDetailFactures(this.facture.idFacture);
-      });
-    err => {
-      console.log(err);
-    }
-  }
+        Swal.fire('success', 'furniture add successfully', 'success');
+     
+      },
+      (error: HttpErrorResponse)=>{
+        Swal.fire('Oops...', 'Something went wrong!', 'error');
+      },
+    )};
   updateDetailFacture(){
     this.dfService.updatedetailfacture(this.detailFacture).subscribe(
       res => {

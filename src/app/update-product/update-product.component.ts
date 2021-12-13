@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Product} from "../models/product";
 import {ProductService} from "../product.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-update-product',
@@ -16,22 +16,21 @@ export class UpdateProductComponent implements OnInit {
   // @ts-ignore
   product = new Product("", "");
   submitted = false;
-
-  constructor(private fb: FormBuilder, private productService: ProductService, private router: Router) {
+id : number;
+  constructor(private fb: FormBuilder, private productService: ProductService, private router: Router, private  route:ActivatedRoute) {
   }
 
   ngOnInit(): void {
-
-
+   this.id = this.route.snapshot.params.idProduit;
+    this.productService.update(this.id).subscribe( data => {
+      // @ts-ignore
+      this.product=data  })
+    console.log(this.product);
   }
 
 
   updateProduct(id: number) {
-    let resp = this.productService.update(id);
-    resp.subscribe( data => {
-      // @ts-ignore
-      this.product=data  })
-    console.log(id);
+
     this.router.navigateByUrl('products')
 
   }

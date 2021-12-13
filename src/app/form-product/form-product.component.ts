@@ -4,6 +4,7 @@ import {ProductService} from "../product.service";
 import {Router} from "@angular/router";
 import {window} from "rxjs/operators";
 import {Product} from "../models/product";
+import {formatDate} from "@angular/common";
 
 
 @Component({
@@ -17,6 +18,7 @@ export class FormProductComponent implements OnInit {
   // @ts-ignore
   product = new Product("","");
   submitted = false;
+  mydate = this.product.dateajout;
   constructor(private fb: FormBuilder,private productService:ProductService, private router:Router) {
   }
 
@@ -33,6 +35,9 @@ export class FormProductComponent implements OnInit {
       code: 'write code here',
       libelle:' write libelle here ',
       prixUnitaire:'write prix here',
+      categorie:'select Category',
+      quantite:'write quantité here',
+
     })
 
 
@@ -50,6 +55,10 @@ location.reload();
     this.product.code = form.value.code
     this.product.libelle = form.value.libelle
     this.product.prixUnitaire = form.value.prixUnitaire
+    this.product.categorie= form.value.categorie
+    this.product.quantite= form.value.quantite
+    // @ts-ignore
+    this.product.dateajout= form.value.dateajout;
     this.submitted = true;
     this.save();
   }

@@ -1,3 +1,4 @@
+<h1 class="centerr">Add New Product</h1><br>
 <div class="centerr">
   <title> Add Product</title>
 
@@ -16,6 +17,18 @@
     <label>Unit price</label>
     <input type="number" class="form-control-sm"  required  [(ngModel)]="product.prixUnitaire" formControlName="prixUnitaire">
   </div></div>
+    <div class=""><div class="form-group">
+      <label class="cat">Category</label>
+      <select class="form-control-ld"  required style="" [(ngModel)]="product.categorie" formControlName="categorie">
+<option>eee</option>
+        <option>ddd</option>
+      </select>
+    </div></div>
+    <div class="centerform"><div class="form-group">
+      <label>Quantity</label>
+      <input type="number" class="form-control-sm"  required  [(ngModel)]="product.quantite" formControlName="quantite">
+    </div></div>
+
   <div class="centerbutton">
 <div class="centerr" >
   <input class="btn btn-primary"  (click)="save()" type="submit" value="Add Product">

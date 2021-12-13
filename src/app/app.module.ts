@@ -18,6 +18,7 @@ import { FormProductComponent } from './form-product/form-product.component';
 import { MainProductComponent } from './main-product/main-product.component';
 import {HttpClientModule} from "@angular/common/http";
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { DetailsproductComponent } from './detailsproduct/detailsproduct.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     FormProductComponent,
     MainProductComponent,
     UpdateProductComponent,
+    DetailsproductComponent,
 
   ],
   imports: [

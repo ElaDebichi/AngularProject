@@ -1,3 +1,5 @@
+<h1 class="centerr">Modify Product</h1><br>
+
 <div class="centerr">
   <title> Add Product</title>
 
@@ -14,11 +16,22 @@
 
     <div class="centerform"><div class="form-group">
       <label>Unit price</label>
-      <input type="number" class="form-control-sm"  required  [(ngModel)]="product.prixUnitaire" value="{{product.prixUnitaire}}"formControlName="prixUnitaire">
+      <input type="number" class="form-control-sm"  required  [(ngModel)]="product.prixUnitaire" value="{{product.prixUnitaire}}" formControlName="prixUnitaire">
+    </div></div>
+    <div class=""><div class="form-group">
+      <label class="cat">Category</label>
+      <select class="form-control-ld"  required style="" [(ngModel)]="product.categorie" value="{{product.categorie}}" formControlName="categorie">
+        <option>eee</option>
+        <option>ddd</option>
+      </select>
+    </div></div>
+    <div class="centerform"><div class="form-group">
+      <label>Quantity</label>
+      <input type="number" class="form-control-sm"  required  [(ngModel)]="product.quantite"  value="{{product.quantite}}" formControlName="quantite">
     </div></div>
     <div class="centerbutton">
       <div class="centerr" >
-        <input class="btn btn-primary" (click)="updateProduct(product.idProduit)"  type="submit" value="Update Product">
+        <input class="btn btn-primary" (click)="updateProduct(product.idProduit)"  type="submit" value="Update">
         <input class="btn btn-pinterest"  type="reset" value="Reset">
       </div>
     </div>

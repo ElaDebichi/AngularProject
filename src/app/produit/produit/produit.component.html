@@ -20,7 +20,11 @@
       <td>{{product.code}}</td>
       <td>{{product.libelle}}</td>
       <td>{{product.prixUnitaire}}</td>
+
+
       <td class="">
+        <button (click)="detailsProduct(product.idProduit)"  class="action-edit"><i class="feather icon-file"></i></button>
+
         <button (click)="deleteProduct(product.idProduit)"  class="action-edit"><i class="feather icon-trash"></i></button>
         <button (click)="updateProduct(product.idProduit)"  class="action-edit"><i class="feather icon-edit"></i></button>
 

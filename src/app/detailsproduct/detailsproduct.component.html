@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="centercard">
+    <div class="card" style="width: 28rem;">
+      <div class="card-body" >
+        <h5 class="card-title">Product #<a class="card-text">{{product.idProduit}}</a></h5>
+<br>
+        <div class="centerr" style="align-content: center"> &nbsp;Code:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<label class="card-text">{{product.code}}</label></div>
+       <br>
+        <div class="centerr">&nbsp;Label:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="card-text">{{product.libelle}}</label></div>
+        <br>
+        <div class="centerr"> Quantity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<label class="card-text">{{product.quantite}}</label></div>
+        <br>
+        <div class="centerr"> Unit Price: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="card-text">{{product.prixUnitaire}}</label></div>
+        <br>
+        <div class="centerr"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<label class="card-text">{{product.categorie}}</label></div>
+        <br>
+        <div class="centerr"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added Date: &nbsp;<label class="card-text">{{product.dateajout}}</label></div>
+
+        <br>
+        <br>
+        <a routerLink='/products' class="btn btn-primary">Go Back</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

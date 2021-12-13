@@ -29,23 +29,13 @@ export class ProduitComponent implements OnInit {
   }
 
 
-
-
-
-
-  public retrieveProduct(id: number){
-    let resp= this.productService.retrieveProduct(id);
-    // @ts-ignore
-    resp.subscribe((data)=>this.products=data);
-
-  }
-
-
-
   updateProduct(idProduit : number){
     this.router.navigate(['updateform',idProduit])
 }
+detailsProduct(idProduit: number){
+  this.router.navigate(['detailsproduct',idProduit])
 
+}
 
 deleteProduct(idProduit: number){
   let resp= this.productService.deleteProduct(idProduit);

@@ -15,6 +15,7 @@ import {LoginComponent} from "./client/login/login.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import { NavbarComponent } from './navbar/navbar.component';
 import { PromotionComponent } from './promotion/promotion.component';
+import { FormPromotionComponent } from './form-promotion/form-promotion.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PromotionComponent } from './promotion/promotion.component';
     LoginComponent,
     MenuComponent,
     NavbarComponent,
-    PromotionComponent
+    PromotionComponent,
+    FormPromotionComponent
   ],
   imports: [
     BrowserModule,

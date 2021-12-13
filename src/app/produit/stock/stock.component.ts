@@ -2,6 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Stock } from 'src/app/models/stock';
 import { StockService } from 'src/app/stock.service';
+import { ProduitService } from 'src/app/produit.service';
+import { Produit } from 'src/app/models/produit';
 
 @Component({
   selector: 'app-stock',
@@ -11,14 +13,20 @@ import { StockService } from 'src/app/stock.service';
 export class StockComponent{
   titlePage:String;
   stocks:Stock[];
+  produits:Produit[];
   
-  constructor(private stockService:StockService){
+  constructor(private stockService:StockService,private ProduitService:ProduitService ){
   }
   ngOnInit():void{
     console.log("this.stocks");
     this.stockService.retrieveAllStock().subscribe(
       data=>{console.log("this.stocks");
         this.stocks=data;
+      }
+    )
+    this.ProduitService.retrieveAllProduit().subscribe(
+      data=>{console.log("produits",data);
+        this.produits=data;
       }
     )
   }

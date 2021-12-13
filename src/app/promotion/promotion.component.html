@@ -6,14 +6,14 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">Checkout</h2>
+                        <h2 class="content-header-title float-left mb-0">Promotion</h2>
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a>
                                 </li>
                                 <li class="breadcrumb-item"><a href="#">eCommerce</a>
                                 </li>
-                                <li class="breadcrumb-item active">Checkout
+                                <li class="breadcrumb-item active">Promotion
                                 </li>
                             </ol>
                         </div>
@@ -22,50 +22,43 @@
             </div>
             <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
                 <div class="form-group breadcrum-right">
-                    <div class="dropdown">
-                        <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather icon-settings"></i></button>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Chat</a><a class="dropdown-item" href="#">Email</a><a class="dropdown-item" href="#">Calendar</a></div>
-                    </div>
+                    <button class="btn gradient-light-primary text-white" *ngIf="!isButtonVisible" (click)="showForm()">Add Promotion</button >
+                    <button class="btn gradient-light-primary text-white"  *ngIf="isButtonVisible" (click)="showList()" >Go back</button>    
                 </div>
             </div>
         </div>
-        <div class="content-body">
-            <form action="#" class="icons-tab-steps checkout-tab-steps wizard-circle">
-                <!-- Checkout Place order starts -->
-                <h6><i class="step-icon step feather icon-shopping-cart"></i>Promotion</h6>
-                <fieldset class="checkout-step-1 px-0">
-                    <section id="place-order" class="list-view product-checkout">
-                        <div *ngFor="let promotion of promotions" class="col-xl-4 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <img class="card-img img-fluid mb-1" src="../../assets/images/pages/content-img-2.jpg" alt="Card image cap">
-                                        <h5 class="mt-1">Vuexy Admin</h5>
-                                        <div class="d-flex justify-content-between">
-                                            <small class="float-left font-weight-bold mb-25" id="example-caption-1">$ 5975</small>
-                                            <small class="float-right  mb-25" id="example-caption-2">$ 8000</small>
+        <div class="content-body" *ngIf="!showFormTemplate">
+            <!-- Basic example and Profile cards section start -->
+            <section id="basic-examples">
+                <div class="row match-height">
+                    <div *ngFor="let promotion of promotions" class="col-xl-4 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <img class="card-img img-fluid mb-1" src="../../assets/images/pages/content-img-2.jpg" alt="Card image cap">
+                                    <h5 class="mt-1">{{promotion.idProduit.libelle}}</h5>
+                                    <p class="card-text">{{promotion.libellePromotion}}</p>
+                                    <div class="d-flex justify-content-between">
+                                        <small class="float-left font-weight-bold mb-25" id="example-caption-1">{{promotion.idProduit.prixUnitaire * 0.2}} DT</small>
+                                        <small class="float-right  mb-25" id="example-caption-2">{{promotion.idProduit.prixUnitaire}} DT</small>
+                                    </div>
+                                    <div class="progress progress-bar-primary box-shadow-6">
+                                        <div id="mygraph" class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="75" aria-valuemax="100" [style.width.%]="promotion.pourcentage" aria-describedby="example-caption-2"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-2">
+                                        <div class="float-left">
+                                            <p class="font-medium-2 mb-0">{{promotion.pourcentage}} %</p>
                                         </div>
-                                        <div class="progress progress-bar-primary box-shadow-6">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="75" aria-valuemax="100" style="width:75%" aria-describedby="example-caption-2"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-between mt-2">
-                                            <div class="float-left">
-                                                <p class="font-medium-2 mb-0">$ 4785.78</p>
-                                                <p class="">- 75 %</p>
-                                            </div>
-                                            <div class="float-right">
-                                                <p class="font-medium-2 mb-0">12 June 2019</p>
-                                                <p class="">Delivery Date</p>
-                                            </div>
+                                        <div class="float-right">
+                                            <p class="font-medium-2 mb-0">12 June 2019</p>
+                                            <p class="">Delivery Date</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                </fieldset>
-                <!-- Checkout Place order Ends -->
-            </form>
-        </div>
+                    </div>
+                </div>
+            </section>
     </div>
 </div>

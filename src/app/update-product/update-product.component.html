@@ -3,12 +3,12 @@
 <div class="centerr">
   <title> Add Product</title>
 
-  <form [formGroup]="form" (ngSubmit)="form" >
+  <form [formGroup]="myform" (ngSubmit)="myform" >
     <div class="centerform"> <div class="form-group" >
       <label>Code</label>
       <input type="text"  class="form-control-sm" required [(ngModel)]="product.code" value="{{product.code}}" formControlName="code">
     </div></div>
-    <br>
+    
     <div class="centerform"> <div class="form-group" >
       <label>Label</label>
       <input type="text"  class="form-control-sm" required [(ngModel)]="product.libelle" value="{{product.libelle}}"  formControlName="libelle">

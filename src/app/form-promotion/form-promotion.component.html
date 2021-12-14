@@ -1,0 +1,33 @@
+
+<div class="centerr">
+    <title> Add Promotion</title>
+  
+    <form [formGroup]="form" (ngSubmit)="form" >
+    <div class="centerform"> <div class="form-group" >
+      <label>Label</label>
+      <input type="text"  class="form-control-sm" required [(ngModel)]="promotion.libellePromotion"  formControlName="label">
+    </div></div>
+      <div class="centerform"> <div class="form-group" >
+        <label>pourcentage</label>
+        <input type="text"  class="form-control-sm" required [(ngModel)]="promotion.pourcentage"  formControlName="pourcentage">
+      </div></div>
+  
+    <div class="centerform "><div class="form-group">
+      <label>Product </label>
+      <!-- <input type="number" class="form-control-sm"  required  [(ngModel)]="promotion.idProduit" formControlName="product"> -->
+      <select class="btn btn-secondary dropdown-toggle" required  [(ngModel)]="promotion.idProduit" formControlName="product">
+        <option *ngFor="let produit of produits" [ngValue]="produit">{{produit.libelle}}</option>
+     </select>
+    </div></div>
+    <!-- <div class="centerform "><div class="form-group">
+        <label>Date de fin promo </label>
+        <input type="date" id="start" name="trip-start" required [(ngModel)]="promotion.date"  formControlName="date">
+      </div></div> -->
+    <div class="centerbutton">
+  <div class="centerr" >
+    <input class="btn btn-primary"  (click)="save()" type="submit" value="Add Product">
+    <input class="btn btn-pinterest"  type="reset" value="Reset">
+  </div>
+    </div>
+  </form>
+  </div>

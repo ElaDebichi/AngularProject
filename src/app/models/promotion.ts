@@ -7,4 +7,5 @@ export class Promotion {
   pourcentage:number;
   libellePromotion:string;
   idProduit:Produit;
+  date:Date;
 }

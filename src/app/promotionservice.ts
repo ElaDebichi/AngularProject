@@ -12,8 +12,8 @@ export class PromotionService {
     // @ts-ignore
     return this.http.get<Promotion[]>("http://localhost:8089/promotion/list");
   }
-  // @ts-ignore
-  addPromotion(promotion: Promotion){
+   // @ts-ignore
+   addPromotion(promotion: Promotion){
     return this.http.post("http://localhost:8089/promotion/add",promotion,{responseType:'text' as 'json'});
   }
 

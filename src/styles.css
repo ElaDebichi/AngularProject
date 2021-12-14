@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+.centerform{
+    max-width: 700px;
+    width: 200px;
+    margin: auto;
+  border: 10px #0C102A;
+    display: flex;
+  align-items: center;
+    justify-content: center;
+  }
+  
+  .centerbutton{
+    max-width: 700px;
+    width: 200px;
+    margin: auto;
+    border: 10px #0C102A;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .centerr{
+  max-width: 1000px;
+    width: auto;
+  height: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

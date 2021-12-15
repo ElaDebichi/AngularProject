@@ -1,0 +1,14 @@
+{
+  "fournisseurs": [
+    {
+      "id": "1",
+      "code": "Prov",
+      "libelle": "provider"
+    },
+    {
+      "code": "prov3",
+      "libelle": "provider3",
+      "id": "e99oCuu"
+    }
+  ]
+}

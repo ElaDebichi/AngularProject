@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule,FormGroup,Validators, ReactiveFormsModule} from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -41,6 +41,7 @@ import { DetailsproductComponent } from './detailsproduct/detailsproduct.compone
 
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Product} from "../models/product";
 import {ProductService} from "../product.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -27,11 +27,11 @@ id : number;
   ngOnInit(): void {
     this.myform = this.fb.group({
 
-      code: 'write code here',
-      libelle:' write libelle here ',
-      prixUnitaire:'write prix here',
-      categorie:'select Category',
-      quantite:'write quantité here',
+      'code': [this.product.code, [Validators.required],[Validators.minLength(4)]],
+      'libelle': [this.product.libelle, [Validators.required],[Validators.minLength(6)]],
+      'prixUnitaire': [this.product.prixUnitaire, [Validators.required]],
+      'categorie': [this.product.categorie, [Validators.required]],
+      'quantite': [this.product.quantite, [Validators.required]]
 
     })
    this.id = parseInt(this.route.snapshot.params.idProduit);

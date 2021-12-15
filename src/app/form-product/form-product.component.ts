@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators, NgForm} from "@angular/forms";
 import {ProductService} from "../product.service";
 import {Router} from "@angular/router";
 import {window} from "rxjs/operators";
@@ -24,24 +24,15 @@ export class FormProductComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.initializeForm();
 
-
-  }
-
-  initializeForm(): void {
     this.form = this.fb.group({
 
-      code: 'write code here',
-      libelle:' write libelle here ',
-      prixUnitaire:'write prix here',
-      categorie:'select Category',
-      quantite:'write quantité here',
-
+      'code': [this.product.code, [Validators.required],[Validators.minLength(4)]],
+      'libelle': [this.product.libelle, [Validators.required],[Validators.minLength(6)]],
+      'prixUnitaire': [this.product.prixUnitaire, [Validators.required]],
+      'categorie': [this.product.categorie, [Validators.required]],
+      'quantite': [this.product.quantite, [Validators.required]]
     })
-
-
-
   }
   save() {
     let response = this.productService.addProduct(this.product);

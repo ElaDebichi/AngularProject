@@ -1,34 +1,50 @@
 <h1 class="centerr">Modify Product</h1><br>
 
 <div class="centerr">
-  <title> Add Product</title>
+  <title> Modify Product</title>
 
-  <form [formGroup]="myform" (ngSubmit)="myform" >
-    <div class="centerform"> <div class="form-group" >
-      <label>Code</label>
-      <input type="text"  class="form-control-sm" required [(ngModel)]="product.code" value="{{product.code}}" formControlName="code">
+  <  <form #f="ngForm">
+  <div class="centerform" required="required"> <div class="form-group" >
+    <label>Code</label>
+    <input type="text"  class="form-control-sm" name="code" [(ngModel)]="product.code" #c="ngModel"  required>
+    <div class="alert alert-danger" *ngIf="c.invalid && c.touched">
+      The Code is a required fiels
     </div></div>
-    
-    <div class="centerform"> <div class="form-group" >
+  </div>
+
+  <div class="centerform">
+    <div class="form-group" >
       <label>Label</label>
-      <input type="text"  class="form-control-sm" required [(ngModel)]="product.libelle" value="{{product.libelle}}"  formControlName="libelle">
+      <input type="text"  class="form-control-sm"  name="libelle"  [(ngModel)]="product.libelle"   #l="ngModel"  required minlength="3">
+      <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
+        The libelle is a required fiels
+      </div>
     </div></div>
 
-    <div class="centerform"><div class="form-group">
-      <label>Unit price</label>
-      <input type="number" class="form-control-sm"  required  [(ngModel)]="product.prixUnitaire" value="{{product.prixUnitaire}}" formControlName="prixUnitaire">
-    </div></div>
-    <div class=""><div class="form-group">
-      <label class="cat">Category</label>
-      <select class="form-control-ld"  required style="" [(ngModel)]="product.categorie" value="{{product.categorie}}" formControlName="categorie">
-        <option>eee</option>
-        <option>ddd</option>
-      </select>
-    </div></div>
-    <div class="centerform"><div class="form-group">
-      <label>Quantity</label>
-      <input type="number" class="form-control-sm"  required  [(ngModel)]="product.quantite"  value="{{product.quantite}}" formControlName="quantite">
-    </div></div>
+  <div class="centerform"><div class="form-group">
+    <label>Unit price</label>
+    <input type="number" class="form-control-sm"  name="prixUnitaire"  [(ngModel)]="product.prixUnitaire" #p="ngModel">
+    <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
+      The prix is a required fiels
+    </div>
+  </div></div>
+  <div class=""><div class="form-group">
+    <label class="catadd">Category</label>
+    <select class="form-control-ldadd"  name="categorie"  [(ngModel)]="product.categorie" #ca="ngModel">
+      <option>eee</option>
+      <option>ddd</option>
+    </select>
+    <div class="alert alert-danger" *ngIf="ca.invalid && ca.touched">
+      The category is a required fiels
+    </div>
+  </div></div>
+  <div class="centerform"><div class="form-group">
+    <label>Quantity</label>
+    <input type="number" class="form-control-sm"  name="quantite"  [(ngModel)]="product.quantite" #q="ngModel">
+    <div class="alert alert-danger" *ngIf="q.invalid && q.touched">
+      The quantity is a required fiels
+    </div>
+  </div></div>
     <div class="centerbutton">
       <div class="centerr" >
         <input class="btn btn-primary" (click)="updateProduct(product.idProduit)"  type="submit" value="Update">

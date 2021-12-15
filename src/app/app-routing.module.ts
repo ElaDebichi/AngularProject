@@ -14,6 +14,7 @@ import {FormProductComponent} from "./form-product/form-product.component";
 import {ProduitComponent} from "./produit/produit/produit.component";
 import {UpdateProductComponent} from "./update-product/update-product.component";
 import {DetailsproductComponent} from "./detailsproduct/detailsproduct.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -43,6 +44,8 @@ const ROUTES: Routes = [
 @NgModule({
   declarations: [],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     RouterModule.forRoot(ROUTES)
   ],

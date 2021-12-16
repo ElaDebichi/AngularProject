@@ -1,4 +1,7 @@
-<div class="table-responsive py-4">
+<div class="col-md-8" id="contentToConvert" >
+  
+  
+  <div class="table-responsive py-4">
   <input class="form-control col-md-3" placeholder="Search" type="text" [(ngModel)]="searchVal" (keyup)="searchNotPaidFacture()">
     <table class="table table-flush" id="datatable-buttons">
       <thead class="thead-light">
@@ -31,7 +34,17 @@
           <td *ngIf="!f.active"><p style="color: green;">Paid</p> </td>
           <td><button class="btn btn-sm btn-primary" (click)="updateFacture(f.idFacture)">View</button></td>
           <td><button class="btn btn-sm btn-danger" (click)="deleteFacture(f.idFacture)">Delete</button></td>
+          
+        
         </tr>
       </tbody>
     </table>
+       
+  </div>
+  <div>
+    <button class="btn btn-success" style="margin-right: 15px;" (click)="downloadAsPDF()" >Download (PDF)</button> 
+ 
+  </div>
+  
+  <simple-notifications></simple-notifications>
   </div>

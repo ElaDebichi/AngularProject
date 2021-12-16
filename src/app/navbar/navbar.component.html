@@ -196,20 +196,14 @@
           
             <ul class="dropdown-menu">
      
-              <li data-menu=""  > <a  [routerLink]="['/factureadd']" [queryParams]="{debug: true}" class="dropdown-item"   ><i class="feather icon-box"></i>Add invoice</a>
+              <li data-menu=""  > <a  [routerLink]="['/factureadd']"   class="dropdown-item"   ><i class="feather icon-box"></i>Add invoice</a>
   
+              <li data-menu=""><a [routerLink]="['/facturepayee']" class="dropdown-item" href="form-wizard.html" data-toggle="dropdown" data-i18n="Form Wizard"><i class="feather icon-package"></i>Retrieve paid invoices</a>
               </li>
-              <li data-menu=""><a class="dropdown-item" href="table.html" data-toggle="dropdown" data-i18n="Table"><i class="feather icon-server"></i >Retrieve all invoices</a>
-              </li>
-              <li data-menu=""><a class="dropdown-item" href="form-wizard.html" data-toggle="dropdown" data-i18n="Form Wizard"><i class="feather icon-package"></i>Retrieve paid invoices</a>
-              </li>
-              <li data-menu=""><a class="dropdown-item" href="form-validation.html" data-toggle="dropdown" data-i18n="Form Validation"><i class="feather icon-check-circle"></i>Retrieve unpaid invoices</a>
+              <li data-menu=""><a [routerLink]="['/facturenonpayee']" class="dropdown-item" href="form-validation.html" data-toggle="dropdown" data-i18n="Form Validation"><i class="feather icon-check-circle"></i>Retrieve unpaid invoices</a>
               </li>
               
-              <li data-menu=""><a class="dropdown-item" href="table-datatable.html" data-toggle="dropdown" data-i18n="Datatable"><i class="feather icon-grid"></i>Datatable</a>
-              </li>
-              <li data-menu=""><a class="dropdown-item" href="table-ag-grid.html" data-toggle="dropdown" data-i18n="agGrid Table"><i class="feather icon-grid"></i>agGrid Table</a>
-              </li>
+              
             </ul>
           </li>
           <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="feather icon-file"></i><span data-i18n="Pages">Pages</span></a>

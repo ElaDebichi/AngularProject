@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { SimpleNotificationsModule } from 'angular2-notifications';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -14,7 +14,9 @@ import { ListFacturesPayerComponent } from './GestionFactures/list-factures-paye
 import { UpdateFactureComponent } from './GestionFactures/update-facture/update-facture.component';
 import { DetailFactureComponent } from './GestionFactures/detail-facture/detail-facture.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import {  RouterModule } from '@angular/router';
+import {  RouterModule } from '@angular/router';  
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -27,14 +29,17 @@ import {  RouterModule } from '@angular/router';
     ListFacturesComponent,
     ListFacturesPayerComponent,
     UpdateFactureComponent,
-    DetailFactureComponent, NavbarComponent,
+    DetailFactureComponent, NavbarComponent,  
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule, RouterModule
+    HttpClientModule, RouterModule, 
+    BrowserAnimationsModule, 
+       SimpleNotificationsModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddFactureComponent } from './GestionFactures/add-facture/add-facture.component';
+import { AddFactureComponent } from './GestionFactures/add-facture/add-facture.component'; 
 import { ListFacturesPayerComponent } from './GestionFactures/list-factures-payer/list-factures-payer.component';
 import { ListFacturesComponent } from './GestionFactures/list-factures/list-factures.component';
 import { UpdateFactureComponent } from './GestionFactures/update-facture/update-facture.component';
@@ -13,9 +13,10 @@ const routes: Routes = [
 
   },
   {path:"listclient", component:ListClientComponent},
-  {path:"facturenonpayer", component:ListFacturesComponent},
-  {path:"facturepayer", component:ListFacturesPayerComponent},
+  {path:"facturenonpayee", component:ListFacturesComponent},
+  {path:"facturepayee", component:ListFacturesPayerComponent},
   {path:"factureadd", component:AddFactureComponent},
+   
   {path:"facture/update/:id", component:UpdateFactureComponent},
   {path:"", redirectTo:"home", pathMatch:"full"},
 ];

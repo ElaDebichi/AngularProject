@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild  } from '@angular/core';
 import { Client } from 'src/app/Models/client';
 import { DetailFacture } from 'src/app/Models/detail-facture';
 import { Facture } from 'src/app/Models/facture';
@@ -8,6 +8,7 @@ import { Produit } from 'src/app/Models/produit';;
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2'; 
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Chart } from 'chart.js';
 
 
 @Component({
@@ -16,6 +17,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./add-facture.component.css']
 })
 export class AddFactureComponent implements OnInit {
+ 
+
   facture: Facture = new Facture();
   message : string="";
   selectedObject : any ;
@@ -34,7 +37,8 @@ export class AddFactureComponent implements OnInit {
     this.getProducts();
     this.createDetailFacture();
   }
-  createDetailFacture(){
+  
+    createDetailFacture(){
     this.detailFacture = new DetailFacture();
     this.detailFacture.facture=this.facture; 
     this.detailFacture.produit= new Produit();   
@@ -91,9 +95,7 @@ export class AddFactureComponent implements OnInit {
       console.log(err);
     }
   }
-
-   // --------------------------- Facture Methods ------------------------------------
-
+ 
   addFacture() {
     this.factureService.addFacture(this.facture).subscribe(
       res => {
@@ -173,7 +175,7 @@ export class AddFactureComponent implements OnInit {
         console.log(this.detailFacture);
         this.createDetailFacture();
         this.getDetailFactures(this.facture.idFacture);
-        Swal.fire('success', 'furniture add successfully', 'success');
+        Swal.fire('success', 'Invoice added successfully', 'success');
      
       },
       (error: HttpErrorResponse)=>{

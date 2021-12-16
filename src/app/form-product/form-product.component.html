@@ -5,9 +5,9 @@
   <form #f="ngForm">
   <div class="centerform" required="required"> <div class="form-group" >
     <label>Code</label>
-    <input type="text"  class="form-control-sm" name="code" [(ngModel)]="product.code" #c="ngModel"  required>
+    <input type="text"  class="form-control-sm" name="code" [(ngModel)]="product.code" #c="ngModel"  required minlength="3">
     <div class="alert alert-danger" *ngIf="c.invalid && c.touched">
-      The Code is a required fiels
+      <div *ngIf="c.errors?.required">Code minimul length 3</div>
   </div></div>
   </div>
 
@@ -16,7 +16,7 @@
       <label>Label</label>
       <input type="text"  class="form-control-sm"  name="libelle"  [(ngModel)]="product.libelle"   #l="ngModel"  required minlength="3">
         <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
-          The libelle is a required fiels
+          <div *ngIf="l.errors?.required">Code minimul length 3</div>
         </div>
     </div></div>
 
@@ -31,12 +31,14 @@
     </div></div>
     <div class=""><div class="form-group">
       <label class="catadd">Category</label>
-      <select class="form-control-ldadd"  name="categorie"  [(ngModel)]="product.categorie" #ca="ngModel">
+      <select class="form-control-ldadd"  name="categorie"  [(ngModel)]="product.categorie" #ca="ngModel" required>
 <option>eee</option>
         <option>ddd</option>
+
       </select>
       <div class="alert alert-danger" *ngIf="ca.invalid && ca.touched">
-        The category is a required fiels
+        <div *ngIf="ca.errors?.required">You must select Category</div>
+
       </div>
     </div></div>
     <div class="centerform"><div class="form-group">

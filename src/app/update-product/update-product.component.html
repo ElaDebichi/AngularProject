@@ -4,48 +4,52 @@
   <title> Modify Product</title>
 
   <form #f="ngForm">
-  <div class="centerform" required="required"> <div class="form-group" >
-    <label>Code</label>
-    <input type="text"  class="form-control-sm" name="code" [(ngModel)]="product.code" #c="ngModel"  required>
-    <div class="alert alert-danger" *ngIf="c.invalid && c.touched">
-      The Code is a required fiels
-    </div></div>
-  </div>
+    <div class="centerform" required="required"> <div class="form-group" >
+      <label>Code</label>
+      <input type="text"  class="form-control-sm" name="code" [(ngModel)]="product.code" #c="ngModel"  required minlength="3">
+      <div class="alert alert-danger" *ngIf="c.invalid && c.touched">
+        <div *ngIf="c.errors?.required">Code minimul length 3</div>
+      </div></div>
+    </div>
 
-  <div class="centerform">
-    <div class="form-group" >
-      <label>Label</label>
-      <input type="text"  class="form-control-sm"  name="libelle"  [(ngModel)]="product.libelle"   #l="ngModel"  required minlength="3">
-      <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
+    <div class="centerform">
+      <div class="form-group" >
+        <label>Label</label>
+        <input type="text"  class="form-control-sm"  name="libelle"  [(ngModel)]="product.libelle"   #l="ngModel"  required minlength="3">
+        <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
+          <div *ngIf="l.errors?.required">Code minimul length 3</div>
+        </div>
+      </div></div>
+
+    <div class="centerform"><div class="form-group">
+      <label>Unit price</label>
+      <input type="number" class="form-control-sm"  name="prixUnitaire"  [(ngModel)]="product.prixUnitaire" #p="ngModel" pattern=" 0+\.[0-9]*[1-9][0-9]*$">
+      <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
+        <div *ngIf="p.errors?.pattern">Price must be positive</div>
+
+      </div>
+
+    </div></div>
+    <div class=""><div class="form-group">
+      <label class="catadd">Category</label>
+      <select class="form-control-ldadd"  name="categorie"  [(ngModel)]="product.categorie" #ca="ngModel" required>
+        <option>eee</option>
+        <option>ddd</option>
+
+      </select>
+      <div class="alert alert-danger" *ngIf="ca.invalid && ca.touched">
+        <div *ngIf="ca.errors?.required">You must select Category</div>
+
+      </div>
+    </div></div>
+    <div class="centerform"><div class="form-group">
+      <label>Quantity</label>
+      <input type="number" class="form-control-sm"  name="quantite"  [(ngModel)]="product.quantite"    #q="ngModel" pattern=" 0+\.[0-9]*[1-9][0-9]*$">
+      <div class="alert alert-danger" *ngIf="q.invalid && q.touched">
+        <div *ngIf="q.errors?.pattern">Quantity must be positive</div>
       </div>
     </div></div>
 
-  <div class="centerform"><div class="form-group">
-    <label>Unit price</label>
-    <input type="number" class="form-control-sm"  name="prixUnitaire"  [(ngModel)]="product.prixUnitaire" #p="ngModel" pattern=" 0+\.[0-9]*[1-9][0-9]*$">
-    <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
-      <div *ngIf="p.errors?.pattern">Price must be positive</div>
-
-    </div>
-
-  </div></div>
-  <div class=""><div class="form-group">
-    <label class="catadd">Category</label>
-    <select class="form-control-ldadd"  name="categorie"  [(ngModel)]="product.categorie" #ca="ngModel">
-      <option>eee</option>
-      <option>ddd</option>
-    </select>
-    <div class="alert alert-danger" *ngIf="ca.invalid && ca.touched">
-      The category is a required fiels
-    </div>
-  </div></div>
-  <div class="centerform"><div class="form-group">
-    <label>Quantity</label>
-    <input type="number" class="form-control-sm"  name="quantite"  [(ngModel)]="product.quantite"    #q="ngModel" pattern=" 0+\.[0-9]*[1-9][0-9]*$">
-    <div class="alert alert-danger" *ngIf="q.invalid && q.touched">
-      <div *ngIf="q.errors?.pattern">Quantity must be positive</div>
-    </div>
-  </div></div>
     <div class="centerbutton">
       <div class="centerr" >
         <input class="btn btn-primary" (click)="updateProduct(product.idProduit)"  type="submit" value="Update">

@@ -31,6 +31,12 @@ export class PromotionComponent implements OnInit {
       }
     )
   }
+  deletePromotion(idPromotion: number){
+    let resp= this.promotionService.deletePromotion(idPromotion);
+    // @ts-ignore
+    resp.subscribe((data)=>this.products=data);
+  location.reload();
+    }
   showList(){
     this.showListpage=true;
       this.showFormTemplate =false;

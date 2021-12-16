@@ -12,7 +12,7 @@ import {RayonComponent} from "./produit/rayon/rayon.component";
 import {StockComponent} from "./produit/stock/stock.component";
 import {ClientComponent} from "./client/client/client.component";
 import {LoginComponent} from "./client/login/login.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NavbarComponent } from './navbar/navbar.component';
 import { PromotionComponent } from './promotion/promotion.component';
 import { FormPromotionComponent } from './form-promotion/form-promotion.component';
@@ -34,6 +34,8 @@ import { FormPromotionComponent } from './form-promotion/form-promotion.componen
     FormPromotionComponent
   ],
   imports: [
+    FormsModule,                               // <========== Add this line!
+    ReactiveFormsModule ,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

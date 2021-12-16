@@ -11,6 +11,7 @@ import {AppComponent} from "./app.component";
 import {MenuComponent} from "./menu/menu.component";
 import {LoginComponent} from "./client/login/login.component";
 import { PromotionComponent } from './promotion/promotion.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -33,6 +34,8 @@ const ROUTES: Routes = [
 @NgModule({
   declarations: [],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     RouterModule.forRoot(ROUTES)
   ],

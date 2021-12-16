@@ -14,6 +14,7 @@ export class StockComponent{
   titlePage:String;
   stocks:Stock[];
   produits:Produit[];
+  name:string;
   
   constructor(private stockService:StockService,private ProduitService:ProduitService ){
   }
@@ -30,7 +31,17 @@ export class StockComponent{
       }
     )
   }
-  
+  Search(){
+    if (this.name==""){
+      this.ngOnInit()
+    
+    }else {
+      this.produits= this.produits.filter(res=>{
+        return res.libelle.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+    
+      })
+    }
+      }
  
 }
 // export class StockComponent implements OnInit {

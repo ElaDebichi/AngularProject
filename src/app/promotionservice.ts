@@ -19,14 +19,14 @@ export class PromotionService {
 
   // @ts-ignore
   deletePromotion(id){
-    return this.http.delete("http://localhost:8089/promotion/"+id);
+    return this.http.delete("http://localhost:8089/promotion/delete/"+id);
   }
   // @ts-ignore
 
-  update(id){
+  update(p : Promotion){
 
     // @ts-ignore
-    return this.http.put("http://localhost:8089/promotion/"+id);
+    return this.http.put("http://localhost:8089/promotion/update/"+p.id,Promotion);
   }
   // @ts-ignore
 

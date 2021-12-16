@@ -42,7 +42,7 @@
                                     <h5 class="mt-1">{{promotion.idProduit.libelle}}</h5>
                                     <p class="card-text">{{promotion.libellePromotion}}</p>
                                     <div class="d-flex justify-content-between">
-                                        <small class="float-left font-weight-bold mb-25" id="example-caption-1">{{promotion.idProduit.prixUnitaire * 0.2}} DT</small>
+                                        <small class="float-left font-weight-bold mb-25" id="example-caption-1">{{(promotion.idProduit.prixUnitaire * promotion.pourcentage)/100}} DT</small>
                                         <small class="float-right  mb-25" id="example-caption-2">{{promotion.idProduit.prixUnitaire}} DT</small>
                                     </div>
                                     <div class="progress progress-bar-primary box-shadow-6">
@@ -53,8 +53,7 @@
                                             <p class="font-medium-2 mb-0">{{promotion.pourcentage}} %</p>
                                         </div>
                                         <div class="float-right">
-                                            <p class="font-medium-2 mb-0">12 June 2019</p>
-                                            <p class="">Delivery Date</p>
+                                            <button  (click)="deletePromotion(promotion.idPromotion)" class="btn btn-outline-primary"><i class="feather icon-trash"></i> Delete</button>
                                         </div>
                                     </div>
                                 </div>

@@ -14,7 +14,7 @@ export class ProduitComponent implements OnInit {
 
   product: Product;
 
-
+libelle: string;
   products: Product[];
 
 
@@ -24,10 +24,25 @@ export class ProduitComponent implements OnInit {
   ngOnInit()  {
     let resp= this.productService.retrieveAllProduits();
     // @ts-ignore
-    resp.subscribe((data)=>this.products=data);
+    resp.subscribe((data)=>{
+      // @ts-ignore
+      this.products=data
+      console.log(data)
+    });
 
   }
 
+  Search(){
+if (this.libelle==""){
+  this.ngOnInit()
+
+}else {
+  this.products= this.products.filter(res=>{
+    return res.libelle.toLocaleLowerCase().match(this.libelle.toLocaleLowerCase());
+
+  })
+}
+  }
 
   updateProduct(idProduit : number){
     this.router.navigate(['updateform',idProduit])
